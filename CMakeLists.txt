@@ -8,4 +8,6 @@ set(CMAKE_CXX_COMPILER "/usr/bin/g++")
 add_executable(Suppliment
 		${PROJECT_SRC_DIR}/main.cpp
                 ${PROJECT_SRC_DIR}/supp.cpp
+                ${PROJECT_SRC_DIR}/powderSupp.cpp
+                ${PROJECT_SRC_DIR}/powderSupp.h
                 ${PROJECT_SRC_DIR}/supp.h)
