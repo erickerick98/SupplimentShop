@@ -27,7 +27,31 @@ Suppliment::~Suppliment()
 {
     std::cout<<"Destructor of suppliment "<<std::endl;
 }
-
+//copy ctor
+Suppliment::Suppliment(const Suppliment& supp)
+:id(supp.id),
+suppName(supp.suppName),
+type(supp.type),
+price(supp.price)
+{
+	std::cout<<"Suppliment copy ctor "<<std::endl;
+}
+//copy assignment operator
+Suppliment &Suppliment::operator = (const Suppliment& supp)
+{
+	//Item 11 handle assignment to self in operator =
+	Suppliment temp(supp);
+	swap(temp);
+	return *this;
+	//Item 10 have assignment operators return a reference to *this
+}
+void Suppliment::swap(Suppliment& supp)
+{
+	this->id=supp.id;
+	this->suppName=supp.suppName;
+	this->type=supp.type;
+	this->price=supp.price;
+}
 int Suppliment::getID()
 {
     return id;

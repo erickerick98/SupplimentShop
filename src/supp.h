@@ -14,14 +14,17 @@ class Suppliment
     //Item 6: Explicitly disable the use of compiler generated functions you do not want
     //they are private to prevent compilers from creating their own version
     //they are only declared not defined
-    //copy assignment operator
+    
+    protected:
+    void swap(Suppliment& supp);
+      
+    public:
+
+	//copy assignment operator
     Suppliment& operator = (const Suppliment&);
 
     //copy constructor
     Suppliment(const Suppliment&);
-
-    public:
-
     //default constructor
     Suppliment();
 
@@ -36,5 +39,6 @@ class Suppliment
     int getPrice();
 
 };
+
 
 #endif
