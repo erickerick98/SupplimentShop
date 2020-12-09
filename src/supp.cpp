@@ -40,6 +40,7 @@ int Suppliment::getPrice()
 {
     return price;
 }
+//Item 13: use objects to manage resources 
 void Suppliment::getBestSuppliment()
 {
     std::auto_ptr<Suppliment> supp(new Suppliment(7,"MyProtein","Proteina",300));
@@ -51,5 +52,5 @@ void Suppliment::getBestSuppliment()
     {
        std::cout<<"This product is the best"<<std::endl;
     }
-    
+    //supp will be destroyed by auto_ptr
 }
