@@ -19,6 +19,7 @@ int main()
     
     s3=s3;
     std::cout<<"S3 is "<<s3.getName()<<std::endl;
+    s3.getBestSuppliment();
 
     s4=s4;
     std::cout<<"S4 is "<<s4.getName()<<std::endl;

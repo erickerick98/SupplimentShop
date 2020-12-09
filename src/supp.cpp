@@ -27,31 +27,7 @@ Suppliment::~Suppliment()
 {
     std::cout<<"Destructor of suppliment "<<std::endl;
 }
-//copy ctor
-Suppliment::Suppliment(const Suppliment& supp)
-:id(supp.id),
-suppName(supp.suppName),
-type(supp.type),
-price(supp.price)
-{
-	std::cout<<"Suppliment copy ctor "<<std::endl;
-}
-//copy assignment operator
-Suppliment &Suppliment::operator = (const Suppliment& supp)
-{
-	//Item 11 handle assignment to self in operator =
-	Suppliment temp(supp);
-	swap(temp);
-	return *this;
-	//Item 10 have assignment operators return a reference to *this
-}
-void Suppliment::swap(Suppliment& supp)
-{
-	this->id=supp.id;
-	this->suppName=supp.suppName;
-	this->type=supp.type;
-	this->price=supp.price;
-}
+
 int Suppliment::getID()
 {
     return id;
@@ -63,4 +39,17 @@ std::string Suppliment::getName()
 int Suppliment::getPrice()
 {
     return price;
+}
+void Suppliment::getBestSuppliment()
+{
+    std::auto_ptr<Suppliment> supp(new Suppliment(7,"MyProtein","Proteina",300));
+    if(supp->getPrice()>this->getPrice())
+    {
+        std::cout<<"This product is not the best"<<std::endl;
+    }
+    else
+    {
+       std::cout<<"This product is the best"<<std::endl;
+    }
+    
 }

@@ -11,20 +11,20 @@ class Suppliment
     std::string type;
     int price;
     
-    //Item 6: Explicitly disable the use of compiler generated functions you do not want
-    //they are private to prevent compilers from creating their own version
-    //they are only declared not defined
+   //Item 14: Prohibit copying
+   //Copy constructor and copy assignment operator are private because we don't want to copy a suppliment
     
+    //copy assignment operator
+    Suppliment& operator = (const Suppliment&);
+
+    //copy constructor
+    Suppliment(const Suppliment&);
+
     protected:
     void swap(Suppliment& supp);
       
     public:
 
-	//copy assignment operator
-    Suppliment& operator = (const Suppliment&);
-
-    //copy constructor
-    Suppliment(const Suppliment&);
     //default constructor
     Suppliment();
 
@@ -38,6 +38,7 @@ class Suppliment
     std::string getName();
     int getPrice();
 
+    void getBestSuppliment();
 };
 
 
